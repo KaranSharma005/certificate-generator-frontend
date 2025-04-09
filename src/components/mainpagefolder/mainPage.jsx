@@ -24,6 +24,10 @@ function MainPage() {
         if (response.error) {
             alert(response.message);
         }
+        else{
+            setExcelFile('');
+            setWordFile('')
+        }
     }
 
     return (
@@ -36,7 +40,9 @@ function MainPage() {
                     type="file"
                     onChange={(e) => setExcelFile(e.target.files[0])}
                     accept=".xlsx, .xls"
+                    id='file1'
                 />
+                {/* <label htmlFor="file1">Click to select file</label> */}
             </div>
 
             <div className={styles.container}>
@@ -45,7 +51,9 @@ function MainPage() {
                     type="file"
                     onChange={(e) => setWordFile(e.target.files[0])}
                     accept=".docx, .doc"
+                    id='file2'
                 />
+                {/* <label htmlFor="file2">Click to select file</label> */}
             </div>
 
             <div>
