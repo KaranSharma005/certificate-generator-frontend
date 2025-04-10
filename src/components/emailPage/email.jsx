@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
-import './EmailInputPage.css';
+import styles from './email.module.css';
+import sendRequest from '../../assets/store';
+import { useNavigate } from 'react-router-dom';
 
 const EmailInputPage = () => {
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     alert(`Email submitted: ${email}`);
+    const response = await sendRequest('/register','POST',JSON.stringify({email}),{'Content-Type' : 'application/json'});
+    if(response.error){
+      alert('Error in saving email');
+      return;
+    }
+    navigate('/generateCertificates')
   };
 
   return (
-    <div className="email-page-container">
-      <form className="email-form" onSubmit={handleSubmit}>
+    <div className={styles.emailpagecontainer}>
+      <form className={styles.emailform} onSubmit={handleSubmit}>
         <h2>Enter your email</h2>
         <input
           type="email"
@@ -19,9 +28,9 @@ const EmailInputPage = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
-          className="email-input"
+          className={styles.emailinput}
         />
-        <button type="submit" className="submit-btn">Submit</button>
+        <button type="submit" className={styles.submitbtn}>Submit</button>
       </form>
     </div>
   );

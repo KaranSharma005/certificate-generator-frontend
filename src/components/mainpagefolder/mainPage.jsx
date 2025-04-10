@@ -23,11 +23,7 @@ function MainPage() {
 
         if (response.error) {
             alert(response.message);
-        }
-        else{
-            setExcelFile('');
-            setWordFile('')
-        }
+        }   
     }
 
     return (

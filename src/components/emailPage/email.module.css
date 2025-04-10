@@ -1,4 +1,4 @@
-.email-page-container {
+.emailpagecontainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     background-color: #f5f6fa;
   }
   
-  .email-form {
+  .emailform {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -15,12 +15,12 @@
     text-align: center;
   }
   
-  .email-form h2 {
+  .emailform h2 {
     margin-bottom: 20px;
     font-family: 'Segoe UI', sans-serif;
   }
   
-  .email-input {
+  .emailinput {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -30,11 +30,11 @@
     outline: none;
   }
   
-  .email-input:focus {
+  .emailinput:focus {
     border-color: #4a90e2;
   }
   
-  .submit-btn {
+  .submitbtn {
     width: 100%;
     padding: 10px;
     background-color: #4a90e2;
@@ -45,7 +45,7 @@
     cursor: pointer;
   }
   
-  .submit-btn:hover {
+  .submitbtn:hover {
     background-color: #357ab7;
   }
   

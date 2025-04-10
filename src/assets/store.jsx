@@ -3,7 +3,8 @@ async function sendRequest(endpoint, method = 'GET', body = null, headers = {}) 
         const response = await fetch(`http://localhost:3000${endpoint}`, {
             method,
             body,
-            headers
+            headers,
+            credentials : "include"
         });
 
         if (!response.ok) {
